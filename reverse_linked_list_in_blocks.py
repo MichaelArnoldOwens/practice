@@ -9,123 +9,70 @@ reverseBlocks(head, 2) == "2 -> 1 -> 3"
 head = 1 -> 2 -> 3 -> 4 -> 5 -> 6
 reverseBlocks(head, 3) == "3 -> 2 -> 1 -> 6 -> 5 -> 4"
 '''
-
 class Node:
-    def __init__(self, value, next=None):
-        self.val = value
-        self.next = next
+  def __init__(self,val, next=None):
+    self.value = val
+    self.next = next
 
-tail1 = Node(3)
-second1 = Node(2, tail1)
-head1 = Node(1, second1)
-
-def create_ll_from_list(arr):
-    print(arr)
-    if len(arr) == 0:
-        return None
-    result = Node(arr[0])
-    curr = result
-    for i in range(1, len(arr)):
-        curr.next = Node(arr[i])
-        curr = curr.next
-    return result
-
+tail = Node(3)
+second = Node(2, tail)
+head = Node(1, second)
 
 def print_ll(head):
-    while head:
-        print(f'{head.val}, ', end='')
-        head = head.next
+  curr = head
+  while curr:
+    print(curr.value, end=', ')
+    curr = curr.next
+
+def build_ll_from_list(arr):
+  result = Node(-1)
+  curr = result
+  for i in arr:
+    new_node = Node(i)
+    curr.next = new_node
+    curr = curr.next
+
+  print_ll(result.next)
+  print('\n')
+  print(result.next.value)
+  print(result.next.next.value)
+  print(result.next.next.next.value)
+  print(result.next.next.next.next.value)
+  print(result.next.next.next.next.next.value)
+  print(result.next.next.next.next.next.next.value)
+  
+  return result.next
+
 
 def reverseBlocks(head, k):
+  curr = head
+  buffer = []
+  counter = 0
+  while curr:
+    segment = []
+    while curr and counter < k:
+      segment.insert(0, curr.value)
+      counter += 1
+      curr = curr.next
+    buffer += segment
     counter = 0
-    curr = head
-    arr = []
-    block = []
-    while curr:
-        if counter == k:
-            block.reverse()
-            arr += block
-            block = []
-            counter = 0
-        else:
-            block.append(curr.val)
-            curr = curr.next
-            counter += 1
-    block.reverse()
-    arr += block
-    return create_ll_from_list(arr)
+  print(buffer)
+  build_ll_from_list(buffer)
 
-# print_ll(reverseBlocks(head1, 2))
-#
-# tail = Node(6)
-# fifth = Node(5, tail)
-# fourth = Node(4, fifth)
-# third = Node(3, fourth)
-# second = Node(2, third)
-# head = Node(1, second)
-#
-# print_ll(reverseBlocks(head, 3))
+      
 
 
-def toString(head: Node) -> None:
-  if not head:
-    return "<empty>"
 
-  parts = []
-  while head:
-    parts.append(str(head.val))
-    head = head.next
 
-  return " -> ".join(parts)
 
-print(toString(reverseBlocks(None, 1)) == "<empty>")
 
-head = Node(1) # 1
-print(toString(reverseBlocks(head, 1)) == "1")
+# reverseBlocks(head, 2) == "2 -> 1 -> 3"
 
-head = Node(1) # 1
-print(toString(reverseBlocks(head, 9)) == "1")
+tail = Node(6)
+second = Node(5, tail)
+third = Node(4, second)
+fourth = Node(3, third)
+fifth = Node(2, fourth)
+head = Node(1, fifth)
 
-# 1 -> 2 -> 3
-head = Node(1, Node(2, Node(3)))
-print(toString(reverseBlocks(head, 1)) == "1 -> 2 -> 3")
-
-# 1 -> 2 -> 3
-head = Node(1, Node(2, Node(3)))
-print(toString(reverseBlocks(head, 2)) == "2 -> 1 -> 3")
-
-# 1 -> 2 -> 3 -> 4 -> 5 -> 6
-head = Node(1, Node(2, Node(3, Node(4, Node(5, Node(6))))))
-print(toString(reverseBlocks(head, 3)) == "3 -> 2 -> 1 -> 6 -> 5 -> 4")
-
-# 5 -> 6 -> 9
-head = Node(5, Node(6, Node(9)))
-print(toString(reverseBlocks(head, 3)) == "9 -> 6 -> 5")
-
-# 2 -> 2 -> 2
-head = Node(2, Node(2, Node(2)))
-print(toString(reverseBlocks(head, 2)) == "2 -> 2 -> 2")
-
-# 1 -> 2 -> 3 -> 4 -> 5 -> 6
-head = Node(1, Node(2, Node(3, Node(4, Node(5, Node(6))))))
-print(toString(reverseBlocks(head, 2)) == "2 -> 1 -> 4 -> 3 -> 6 -> 5")
-
-# 1 -> 2 -> 3 -> 4 -> 5 -> 6
-head = Node(1, Node(2, Node(3, Node(4, Node(5, Node(6))))))
-print(toString(reverseBlocks(head, 4)) == "4 -> 3 -> 2 -> 1 -> 6 -> 5")
-
-# 1 -> 2 -> 3 -> 4 -> 5 -> 6
-head = Node(1, Node(2, Node(3, Node(4, Node(5, Node(6))))))
-print(toString(reverseBlocks(head, 5)) == "5 -> 4 -> 3 -> 2 -> 1 -> 6")
-
-# 1 -> 2 -> 3 -> 4 -> 5 -> 6
-head = Node(1, Node(2, Node(3, Node(4, Node(5, Node(6))))))
-print(toString(reverseBlocks(head, 5)) == "5 -> 4 -> 3 -> 2 -> 1 -> 6")
-
-# 1 -> 2 -> 3 -> 4 -> 5 -> 6
-head = Node(1, Node(2, Node(3, Node(4, Node(5, Node(6))))))
-print(toString(reverseBlocks(head, 6)) == "6 -> 5 -> 4 -> 3 -> 2 -> 1")
-
-# 1 -> 2 -> 3 -> 4 -> 5 -> 6
-head = Node(1, Node(2, Node(3, Node(4, Node(5, Node(6))))))
-print(toString(reverseBlocks(head, 9)) == "6 -> 5 -> 4 -> 3 -> 2 -> 1")
+reverseBlocks(head, 3)

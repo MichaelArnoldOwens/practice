@@ -1,0 +1,1751 @@
+
+Count Elements in a Linked List (iterative / recursive) - 1m
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+✏️ Description
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+Q. Given an unsorted linked list, count the number of elements (iteratively or recursively).
+
+Examples:
+• Given a linked list: 1 ➞ 4 ➞ 5 // returns 3
+• Given a linked list: 0 // returns 1
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+🟦 Python
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+class ListNode:
+    def __init__(self, value = 0, next = None): 
+        self.value = value
+        self.next = next
+    
+def count(node: ListNode) -> int:
+    # Write your code here.
+    pass
+
+# Test Cases
+LL1 = ListNode(1, ListNode(4, ListNode(5)))
+print(count(None)) # 0
+print(count(LL1)) # 3
+print(count(ListNode())) # 1
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+🟨 Javascript
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+class ListNode {
+    constructor(value = 0, next = null) {
+        this.value = value
+        this.next = next
+    }
+}
+
+function count(head) {
+    // Write your code here.
+    return -1
+}
+
+// Test Cases
+var LL1 = new ListNode(1, new ListNode(4, new ListNode(5)))
+console.log(count(null)) // 0
+console.log(count(LL1)) // 3
+console.log(count(new ListNode())) // 1
+
+Append an Element to a Linked List (iterative / recursive) - 1m
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+✏️ Description
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+Q. Given a linked list, append an element with a target value to the list (iteratively or recursively).
+
+Examples:
+• Given a linked list: 1 ➞ 4 ➞ 5, target: 7 // returns 1 ➞ 4 ➞ 5 ➞ 7
+• Given a linked list: 0, target 7 // returns 0 ➞ 7
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+🟦 Python
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+class ListNode:
+    def __init__(self, value = 0, next = None): 
+        self.value = value
+        self.next = next
+        
+def arrayify(head) -> [int]:
+    array = []
+    ptr = head
+    while ptr != None:
+        array.append(ptr.value)
+        ptr = ptr.next
+    return array
+
+def append(node: ListNode, target: int) -> ListNode:
+    # Write your code here.
+    pass
+
+# Test Cases
+LL1 = ListNode(1, ListNode(4, ListNode(5)))
+print(arrayify(append(None, 1))) # [1]
+print(arrayify(append(LL1, 7))) # [1, 4, 5, 7]
+print(arrayify(append(ListNode(), 7))) # [0, 7]
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+🟨 Javascript
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+class ListNode {
+    constructor(value = 0, next = null) {
+        this.value = value
+        this.next = next
+    }
+}
+
+function arrayify(head) {
+    let ptr = head
+    var array = []
+    while (ptr != null) {
+        array.push(ptr.value)
+        ptr = ptr.next
+    }
+    return array
+}
+
+function append(head, target) {
+    // Write your code here.
+    return new ListNode()
+}
+
+// Test Cases
+var LL1 = new ListNode(1, new ListNode(4, new ListNode(5)))
+console.log(arrayify(append(null, 1))) // [1]
+console.log(arrayify(append(LL1, 7))) // [1, 4, 5, 7]
+console.log(arrayify(append(new ListNode(), 7))) // [0, 7]
+
+Sum Elements in a Linked List (iterative / recursive) - 1m
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+✏️ Description
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+Q. Given a linked list, sum all elements in the list.
+
+Examples:
+• Given a linked list: 1 ➞ 4 ➞ 5 // returns 10
+• Given a linked list: 1 // returns 1
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+🟦 Python
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+class ListNode:
+    def __init__(self, value = 0, next = None): 
+        self.value = value
+        self.next = next
+        
+def sum(node: ListNode) -> int:
+    # Write your code here.
+    pass
+
+# Test Cases
+LL1 = ListNode(1, ListNode(4, ListNode(5)))
+print(sum(None)) # 0
+print(sum(LL1)) # 10
+print(sum(ListNode(1))) # 1
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+🟨 Javascript
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+class ListNode {
+    constructor(value = 0, next = null) {
+        this.value = value
+        this.next = next
+    }
+}
+
+function sum(node) {
+    // Write your code here.
+    return -1
+}
+
+// Test Cases
+var LL1 = new ListNode(1, new ListNode(4, new ListNode(5)))
+console.log(sum(null)) // 0
+console.log(sum(LL1)) // 10
+console.log(sum(new ListNode(1))) // 1
+
+Find Max Element in a Linked List (iterative / recursive) - 1m
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+✏️ Description
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+Q. Given an unsorted linked list, find the element with the largest value.
+
+Examples:
+• Given a linked list: 1 ➞ 4 ➞ 5 ➞ 1 // returns 5
+• Given a linked list: 1  // returns 1
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+🟦 Python
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+class ListNode:
+    def __init__(self, value = 0, next = None): 
+        self.value = value
+        self.next = next
+        
+def find_max(node: ListNode) -> int:
+    # Write your code here.
+    pass
+
+# Test Cases
+LL1 = ListNode(1, ListNode(4, ListNode(5, ListNode(1))))
+LL2 = ListNode(7, ListNode(1, ListNode(5, ListNode(1))))
+LL3 = ListNode(-1, ListNode(-3, ListNode(-5, ListNode(0, ListNode(-11)))))
+print(find_max(LL1)) # 5
+print(find_max(LL2)) # 7
+print(find_max(LL3)) # 0
+print(find_max(ListNode(1))) # 1
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+🟨 Javascript
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+class ListNode {
+    constructor(value = 0, next = null) {
+        this.value = value
+        this.next = next
+    }
+}
+        
+function findMax(node) {
+    // Write your code here.
+    return -1
+}
+
+// Test Cases
+var LL1 = new ListNode(1, new ListNode(4, new ListNode(5, new ListNode(1))))
+var LL2 = new ListNode(7, new ListNode(1, new ListNode(5, new ListNode(1))))
+var LL3 = new ListNode(-1, new ListNode(-3, new ListNode(-5, new ListNode(0, new ListNode(-11)))))
+console.log(findMax(LL1)) // 5
+console.log(findMax(LL2)) // 7
+console.log(findMax(LL3)) // 0
+console.log(findMax(new ListNode(1))) // 1
+
+Remove All Elements with a Target Value in a Linked List - 3m
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+✏️ Description
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+Q. Given a linked list and a target integer, remove all nodes with the value target.
+
+Examples:
+• Given a linked list: 4 ➞ 2 ➞ 3 ➞ 2 ➞ 2, target: 2 // returns 4 ➞ 3
+• Given a linked list: 4, target: 4  // returns an empty list
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+🟦 Python
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+class ListNode:
+    def __init__(self, value = 0, next = None): 
+        self.value = value
+        self.next = next
+        
+def arrayify(head) -> [int]:
+    array = []
+    ptr = head
+    while ptr != None:
+        array.append(ptr.value)
+        ptr = ptr.next
+    return array
+
+def remove(node: ListNode, target: int) -> ListNode: 
+    # Write your code here.
+    pass
+
+# Test Cases
+LL1 = ListNode(4, ListNode(2, ListNode(1, ListNode(1, ListNode(3, ListNode(2, ListNode(2)))))))
+LL2 = remove(None, 1)
+print(arrayify(LL2)) # []
+LL1 = remove(LL1, 1)
+print(arrayify(LL1)) # [4, 2, 3, 2, 2]
+LL1 = remove(LL1, 2)
+print(arrayify(LL1)) # [4, 3]
+remove(LL1, 3)
+print(arrayify(LL1)) # [4]
+LL1 = remove(LL1, 4)
+print(arrayify(LL1)) # []
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+🟨 Javascript
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+class ListNode {
+    constructor(value = 0, next = null) {
+        this.value = value
+        this.next = next
+    }
+}
+
+function arrayify(head) {
+    let ptr = head
+    var array = []
+    while (ptr != null) {
+        array.push(ptr.value)
+        ptr = ptr.next
+    }
+    return array
+}
+
+function remove(node, target) { 
+    // Write your code here.
+    return new ListNode()
+}
+
+// Test Cases
+var LL1 = new ListNode(4, new ListNode(2, new ListNode(1, new ListNode(1, new ListNode(3, new ListNode(2, new ListNode(2)))))))
+var LL2 = remove(null, 1);
+console.log(arrayify(LL2)) // []
+LL1 = remove(LL1, 1);
+console.log(arrayify(LL1)) // [4, 2, 3, 2, 2] 
+LL1 = remove(LL1, 2);
+console.log(arrayify(LL1)) // [4, 3]
+LL1 = remove(LL1, 3);
+console.log(arrayify(LL1)) // [4]
+LL1 = remove(LL1, 4);
+console.log(arrayify(LL1)) // []
+
+NOTE: If you're removing the head node, you need to reassign LL1 or it will still point to the old head! 
+
+Find Element in a Sorted Linked List - 1m
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+✏️ Description
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+Q. Given a sorted linked list of unique integers, check if the list contains an element with a target value.
+
+Examples:
+• Given a linked list: 2 ➞ 3 ➞ 5, target: 2 // returns True
+• Given a linked list: 2 ➞ 3 ➞ 5, target: 4  // returns False
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+🟦 Python
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+class ListNode:
+    def __init__(self, value = 0, next = None): 
+        self.value = value
+        self.next = next
+
+def search(head: ListNode, target: int) -> bool: 
+    # Write your code here.
+    pass
+
+# Test Cases
+LL1 = ListNode(1, ListNode(2, ListNode(3, ListNode(5, ListNode(6, ListNode(7, ListNode(10)))))))
+print(search(None, 1)) # False
+print(search(LL1, 2)) # True
+print(search(LL1, 4)) # False
+print(search(LL1, -1)) # False
+print(search(LL1, 10)) # True
+print(search(LL1, 11)) # False
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+🟨 Javascript
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+class ListNode {
+    constructor(value = 0, next = null) {
+        this.value = value
+        this.next = next
+    }
+}
+
+function search(head, target) { 
+    // Write your code here.
+    return false
+}
+
+// Test Cases
+let LL1 = new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(5, new ListNode(6, new ListNode(7, new ListNode(10)))))))
+console.log(search(null, 1)) // false
+console.log(search(LL1, 2)) // true
+console.log(search(LL1, 4)) // false
+console.log(search(LL1, -1)) // false
+console.log(search(LL1, 10)) // true
+console.log(search(LL1, 11)) // false
+
+Insert a Target Element in a Sorted Linked List (iterative / recursive) - 1m
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+✏️ Description
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+Q. Given a sorted linked list, insert an element in the appropriate position.
+
+Examples:
+• Given a linked list: 1 ➞ 3 ➞ 4, target: 2 // returns 1 ➞ 2 ➞ 3 ➞ 4
+• Given an empty linked list, target: 1  // returns 1
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+🟦 Python
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+class ListNode:
+    def __init__(self, value = 0, next = None): 
+        self.value = value
+        self.next = next
+        
+def arrayify(head) -> [int]:
+    array = []
+    ptr = head
+    while ptr != None:
+        array.append(ptr.value)
+        ptr = ptr.next
+    return array
+
+def insert(head: ListNode, target: int) -> ListNode:
+    # Write your code here.
+    pass
+
+# Test Cases
+LL1 = ListNode(1, ListNode(3, ListNode(4)))
+LL2 = ListNode(-3, ListNode(-2, ListNode(-1)))
+print(arrayify(insert(LL1, 2))) # [1, 2, 3, 4]
+print(arrayify(insert(LL2, -4))) # [-4, -3, -2, -1]
+print(arrayify(insert(LL2, 0))) # [-3, -2, -1, 0]
+print(arrayify(insert(None, 1))) # [1]
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+🟨 Javascript
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+class ListNode {
+    constructor(value = 0, next = null) {
+        this.value = value
+        this.next = next
+    }
+}
+
+function arrayify(head) {
+    let ptr = head
+    var array = []
+    while (ptr != null) {
+        array.push(ptr.value)
+        ptr = ptr.next
+    }
+    return array
+}
+
+function insert(head, target) {
+    // Write your code here.
+    return new ListNode()
+}
+
+// Test Cases
+var LL1 = new ListNode(1, new ListNode(3, new ListNode(4)))
+var LL2 = new ListNode(-3, new ListNode(-2, new ListNode(-1)))
+console.log(arrayify(insert(LL1, 2))) // [1, 2, 3, 4]
+console.log(arrayify(insert(LL2, -4))) // [-4, -3, -2, -1]
+console.log(arrayify(insert(LL2, 0))) // [-3, -2, -1, 0]
+console.log(arrayify(insert(null, 1))) // [1]
+
+Remove a Target Element from a Sorted Linked List (iterative / recursive)- 3m
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+✏️ Description
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+Q. Given a sorted linked list of unique integers, remove a node with the target value from the list.
+
+Examples:
+• Given a linked list: -1 ➞ 1 ➞ 3 ➞ 4, target: 1 // returns -1 ➞ 3 ➞ 4
+• Given a linked list: 5, target: 3 // returns 5
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+🟦 Python
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+class ListNode:
+    def __init__(self, value = 0, next = None): 
+        self.value = value
+        self.next = next
+        
+def arrayify(head) -> [int]:
+    array = []
+    ptr = head
+    while ptr != None:
+        array.append(ptr.value)
+        ptr = ptr.next
+    return array
+
+def remove(head: ListNode, target: int) -> ListNode:
+    # Write your code here.
+    pass
+
+# Test Cases
+LL1 = ListNode(-1, ListNode(1, ListNode(3, ListNode(4))))
+print(arrayify(remove(LL1, 1))) # [-1, 3, 4]
+LL1 = remove(LL1, -1) # Notice we expect this one to return a new head!
+print(arrayify(LL1)) # [3, 4]
+print(arrayify(remove(LL1, 4))) # [3]
+print(arrayify(remove(LL1, 5))) # [3]
+print(arrayify(remove(ListNode(1), 1))) # []
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+🟨 Javascript
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+class ListNode {
+    constructor(value = 0, next = null) {
+        this.value = value
+        this.next = next
+    }
+}
+
+function arrayify(head) {
+    let ptr = head
+    var array = []
+    while (ptr != null) {
+        array.push(ptr.value)
+        ptr = ptr.next
+    }
+    return array
+}
+
+function remove(head, target) {
+    // Write your code here.
+    return new ListNode()
+}
+
+// Test Cases
+var LL1 = new ListNode(-1, new ListNode(1, new ListNode(3, new ListNode(4))))
+console.log(arrayify(remove(LL1, 1))) // [-1, 3, 4]
+console.log(arrayify(remove(LL1, -1))) // [3, 4]
+var LL1 = remove(LL1, -1) // Notice we expect this one to return a new head!
+console.log(arrayify(remove(LL1, 4))) // [3]
+console.log(arrayify(remove(LL1, 5))) // [3]
+console.log(arrayify(remove(new ListNode(1), 1))) // []
+
+Find the Middle Element from a Linked List in One Pass - 2m
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+✏️ Description
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+Q. Given a linked list, find the middle element in one pass. If the length of the list is even, return the first of the two middle nodes.
+Follow-up: What if we want to return the second of the two middle nodes in lists with even numbers of nodes?
+
+Examples:
+• Given a linked list: 1 ➞ 3 ➞ 5 // returns 3
+• Given a linked list:  1 ➞ 2 ➞ 3 ➞ 4 // returns 2
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+🟦 Python
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+class ListNode:
+    def __init__(self, value = 0, next = None): 
+        self.value = value
+        self.next = next
+
+def find_middle(head: ListNode) -> int:
+    # Write your code here.
+    pass
+
+# Test Cases
+LL1 = ListNode(1, ListNode(3, ListNode(5)))
+LL2 = ListNode(1, ListNode(3, ListNode(-13, ListNode(-3, ListNode(1)))))
+LL3 = ListNode(1, ListNode(2, ListNode(3, ListNode(4))))
+LL4 = ListNode(1, ListNode(2, ListNode(3, ListNode(4, ListNode(5, ListNode(6))))))
+print(find_middle(None)) # None
+print(find_middle(LL1)) # 3
+print(find_middle(LL2)) # -13
+print(find_middle(LL3)) # 2
+print(find_middle(LL4)) # 3
+print(find_middle(ListNode(1))) # 1
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+🟨 Javascript
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+class ListNode {
+    constructor(value = 0, next = null) {
+        this.value = value
+        this.next = next
+    }
+}
+
+function findMiddle(head) {
+    // Write your code here.
+    return -1
+}
+
+// Test Cases
+var LL1 = new ListNode(1, new ListNode(3, new ListNode(5)))
+var LL2 = new ListNode(1, new ListNode(3, new ListNode(-13, new ListNode(-3, new ListNode(1)))))
+var LL3 = new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4))))
+console.log(findMiddle(null)) // null
+console.log(findMiddle(LL1)) // 3
+console.log(findMiddle(LL2)) // -13
+console.log(findMiddle(LL3)) // 2
+console.log(findMiddle(new ListNode(1))) // 1
+
+Find Kth Element from the End of a Linked List in One Pass - 3m
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+✏️ Description
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+Q. Given a linked list, return the kth element from the end of the list.
+   If the k exceeds the length of the list, return -1.
+
+Examples:
+• Given a linked list: 13 ➞ 1 ➞ 5 ➞ 3 ➞ 7 ➞ 10, k: 1 // returns 10
+• Given a linked list: 13 ➞ 1 ➞ 5 ➞ 3 ➞ 7 ➞ 10, k: 7 // returns -1
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+🟦 Python
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+class ListNode:
+    def __init__(self, value = 0, next = None): 
+        self.value = value
+        self.next = next
+
+def kth_from_last(head: ListNode, k: int) -> int:
+    # Write your code here.
+    pass
+
+# Test Cases
+LL1 = ListNode(13, ListNode(1, ListNode(5, ListNode(3, ListNode(7, ListNode(10))))))
+print(kth_from_last(LL1, 1)) # 10
+print(kth_from_last(LL1, 3)) # 3
+print(kth_from_last(LL1, 6)) # 13
+print(kth_from_last(LL1, 7)) # -1
+print(kth_from_last(None, 7)) # None
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+🟨 Javascript
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+class ListNode {
+    constructor(value = 0, next = null) {
+        this.value = value
+        this.next = next
+    }
+}
+
+function kthFromLast(head, k) {
+    // Write your code here.
+    return -1
+}
+
+// Test Cases
+var LL1 = new ListNode(13, new ListNode(1, new ListNode(5, new ListNode(3, new ListNode(7, new ListNode(10))))))
+console.log(kthFromLast(LL1, 1)) // 10
+console.log(kthFromLast(LL1, 3)) // 3 
+console.log(kthFromLast(LL1, 6)) // 13
+console.log(kthFromLast(LL1, 7)) // -1
+
+Sum Two Linked Lists of Equal Length - 2m
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+✏️ Description
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+Q. Given two linked lists of equal length, sum elements' value at the same position.
+
+Examples:
+• Given two linked lists: 1 ➞ 3 ➞ 5 and -1 ➞ 3 ➞ -10 // returns 0 ➞ 6 ➞ -5
+• Given two linked lists: 0 and 0 // returns 0
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+🟦 Python
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+class ListNode:
+    def __init__(self, value = 0, next = None): 
+        self.value = value
+        self.next = next
+        
+def arrayify(head) -> [int]:
+    array = []
+    ptr = head
+    while ptr != None:
+        array.append(ptr.value)
+        ptr = ptr.next
+    return array
+
+def sum_two_ll(head1: ListNode, head2: ListNode) -> ListNode:
+    # Write your code here.
+    pass
+
+# Test Cases
+LL1 = ListNode(1, ListNode(3, ListNode(5)))
+LL2 = ListNode(-1, ListNode(3, ListNode(-10)))
+print(arrayify(sumTwoLL(LL1, LL2))) # [0, 6, -5]
+print(arrayify(sumTwoLL(ListNode(0), ListNode(0)))) # [0]
+print(sum_two_ll(None, None)) # None
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+🟨 Javascript
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+class ListNode {
+    constructor(value = 0, next = null) {
+        this.value = value
+        this.next = next
+    }
+}
+
+function arrayify(head) {
+    let ptr = head
+    var array = []
+    while (ptr != null) {
+        array.push(ptr.value)
+        ptr = ptr.next
+    }
+    return array
+}
+
+function sumTwoLL(head1, head2) {
+    // Write your code here.
+    return new ListNode()
+}
+
+// Test Cases
+var LL1 = new ListNode(1, new ListNode(3, new ListNode(5)))
+var LL2 = new ListNode(-1, new ListNode(3, new ListNode(-10)))
+console.log(arrayify(sumTwoLL(LL1, LL2))) // [0, 6, -5]
+console.log(arrayify(sumTwoLL(new ListNode(0), new ListNode(0)))) // [0]
+
+Reverse a Linked List - 3m
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+✏️ Description
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+Q. Reverse a given linked list.
+
+Examples:
+• Given a linked list: 13 ➞ 1 ➞ 5 ➞ 3 ➞ 7 ➞ 10 // returns 10 ➞ 7 ➞ 3 ➞ 5 ➞ 1 ➞ 13
+• Given a linked list: 1 // returns 1
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+🟦 Python
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+class ListNode:
+    def __init__(self, value = 0, next = None): 
+        self.value = value
+        self.next = next
+        
+def arrayify(head) -> [int]:
+    array = []
+    ptr = head
+    while ptr != None:
+        array.append(ptr.value)
+        ptr = ptr.next
+    return array
+
+def reverse(head: ListNode) -> ListNode:
+    # Write your code here.
+    pass
+
+# Test Cases
+LL1 = ListNode(13, ListNode(1, ListNode(5, ListNode(3, ListNode(7, ListNode(10))))))
+print(arrayify(reverse(ListNode(1)))) # [1]
+print(arrayify(reverse(ListNode(1, ListNode(2))))) # [2, 1]
+print(arrayify(reverse(LL1))) # [10, 7, 3, 5, 1, 13]
+print(reverse(None)) # None
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+🟨 Javascript
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+class ListNode {
+    constructor(value = 0, next = null) {
+        this.value = value
+        this.next = next
+    }
+}
+
+function arrayify(head) {
+    let ptr = head
+    var array = []
+    while (ptr != null) {
+        array.push(ptr.value)
+        ptr = ptr.next
+    }
+    return array
+}
+
+function reverse(head) {
+    // Write your code here.
+    return new ListNode()
+}
+
+// Test Cases
+var LL1 = new ListNode(13, new ListNode(1, new ListNode(5, new ListNode(3, new ListNode(7, new ListNode(10))))))
+console.log(arrayify(reverse(new ListNode(1)))) // [1]
+console.log(arrayify(reverse(new ListNode(1, new ListNode(2))))) // [2, 1]
+console.log(arrayify(reverse(LL1))) // [10, 7, 3, 5, 1, 13]
+
+[ ] Array
+
+Bubble Sort - 3m
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+✏️ Description
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+Q. Given an unsorted array, perform bubble sort in ascending order.
+
+Examples:
+• Given an array: [1] // returns [1]
+• Given an array: [3, 1, 2, 4] // returns [1, 2, 3, 4]
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+🟦 Python
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+def bubble_sort(array: list[int]) -> [int]:
+    # Write your code here.
+    pass
+
+# Test Cases
+print(bubble_sort([])) # []
+print(bubble_sort([1])) # [1]
+print(bubble_sort([3, 1, 2, 4])) # [1, 2, 3, 4]
+print(bubble_sort([-10, 1, 3, 8, -13, 32, 9, 5])) # [-13, -10, 1, 3, 5, 8, 9, 32]
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+🟨 Javascript
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+function bubbleSort(array) {
+    // Write your code here.
+    return [-1]
+}
+
+// Test Cases
+console.log(bubbleSort([])) // []
+console.log(bubbleSort([1])) // [1]
+console.log(bubbleSort([3, 1, 2, 4])) // [1, 2, 3, 4]
+console.log(bubbleSort([-10, 1, 3, 8, -13, 32, 9, 5])) // [-13, -10, 1, 3, 5, 8, 9, 32]
+
+Selection Sort - 3m
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+✏️ Description
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+Q. Given an unsorted array, perform selection sort in ascending order.
+
+Examples:
+• Given an array: [1] // returns [1]
+• Given an array: [3, 1, 2, 4] // returns [1, 2, 3, 4]
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+🟦 Python
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+def selection_sort(array: list[int]) -> [int]:
+    # Write your code here.
+    pass
+
+# Test Cases
+print(selection_sort([])) # []
+print(selection_sort([1])) # [1]
+print(selection_sort([3, 1, 2, 4])) # [1, 2, 3, 4]
+print(selection_sort([-10, 1, 3, 8, -13, 32, 9, 5])) # [-13, -10, 1, 3, 5, 8, 9, 32]
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+🟨 Javascript
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+function selectionSort(array) {
+    // Write your code here.
+    return [-1]
+}
+
+// Test Cases
+console.log(selectionSort([])) // []
+console.log(selectionSort([1])) // [1]
+console.log(selectionSort([3, 1, 2, 4])) // [1, 2, 3, 4]
+console.log(selectionSort([-10, 1, 3, 8, -13, 32, 9, 5])) // [-13, -10, 1, 3, 5, 8, 9, 32]
+
+Insertion Sort - 3m
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+✏️ Description
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+Q. Given an unsorted array, perform insertion sort in ascending order.
+
+Examples:
+• Given an array: [1] // returns [1]
+• Given an array: [3, 1, 2, 4] // returns [1, 2, 3, 4]
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+🟦 Python
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+def insertion_sort(array: list[int]) -> [int]:
+    # Write your code here.
+    pass
+
+# Test Cases
+print(insertion_sort([])) # []
+print(insertion_sort([1])) # [1]
+print(insertion_sort([3, 1, 2, 4])) # [1, 2, 3, 4]
+print(insertion_sort([-10, 1, 3, 8, -13, 32, 9, 5])) # [-13, -10, 1, 3, 5, 8, 9, 32]
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+🟨 Javascript
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+function insertionSort(array) {
+    // Write your code here.
+    return [-1]
+}
+
+// Test Cases
+console.log(insertionSort([])) // []
+console.log(insertionSort([1])) // [1]
+console.log(insertionSort([3, 1, 2, 4])) // [1, 2, 3, 4]
+console.log(insertionSort([-10, 1, 3, 8, -13, 32, 9, 5])) // [-13, -10, 1, 3, 5, 8, 9, 32]
+
+Merge Sort - 30m
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+✏️ Description
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+Q. Given an unsorted array, perform merge sort in ascending order.
+
+Examples:
+• Given an array: [1] // returns [1]
+• Given an array: [3, 1, 2, 4] // returns [1, 2, 3, 4]
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+🟦 Python
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+def merge_sort(array: list[int]) -> [int]:
+    # Write your code here.
+    pass
+
+# Test Cases
+print(merge_sort([])) # []
+print(merge_sort([1])) # [1]
+print(merge_sort([3, 1, 2, 4])) # [1, 2, 3, 4]
+print(merge_sort([-10, 1, 3, 8, -13, 32, 9, 5])) # [-13, -10, 1, 3, 5, 8, 9, 32]
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+🟨 Javascript
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+function mergeSort(array) {
+    // Write your code here.
+    return [-1]
+}
+
+// Test Cases
+console.log(mergeSort([])) // []
+console.log(mergeSort([1])) // [1]
+console.log(mergeSort([3, 1, 2, 4])) // [1, 2, 3, 4]
+console.log(mergeSort([-10, 1, 3, 8, -13, 32, 9, 5])) // [-13, -10, 1, 3, 5, 8, 9, 32]
+
+Find First Element Repeated K Times - 2m
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+✏️ Description
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+Q. Given an array of positive integers, find the first element that occurs k number of times. If no element occurs k times, return -1, and you may assume k is greater than 0. 
+
+Examples:
+• Given an array: [1, 2, 2, 3, 3], k: 2 // returns 2
+• Given an array: [], k: 1 // returns -1
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+🟦 Python
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+def first_k_times(input: list[int], k: int) -> int:
+    # Write your code here.
+    pass
+
+# Test Cases
+print(first_k_times([1, 2, 2, 3, 3], 2)) # 2
+print(first_k_times([1, 2, 2, 3, 3], 3)) # -1
+print(first_k_times([], 1)) # -1
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+🟨 Javascript
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+function firstKTimes(array, k) {
+    // Write your code here.
+    return -1
+}
+
+// Test Cases
+console.log(firstKTimes([1, 2, 2, 3, 3], 2)) // 2
+console.log(firstKTimes([1, 2, 2, 3, 3], 3)) // -1
+console.log(firstKTimes([], 1)) // -1
+
+Number of Unique Elements in an Array - 1m
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+✏️ Description
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+Q. Given an unsorted array, return the number of unique elements that appear only once in the array. Unique elements are those that occur exactly once.
+
+Examples:
+• Given an array: [3, 1, 1, 2, 3, 1, 1, 1, 4] // returns 2 (unique elements: 2 and 4)
+• Given an array: [1] // returns 1 (unique element: 1)
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+🟦 Python
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+def num_uniques(array: list[int]) -> int:
+    # Write your code here.
+    pass
+
+# Test Cases
+print(num_uniques([])) # 0
+print(num_uniques([3, 1, 1, 2, 3, 1, 1, 1, 4])) # 2
+print(num_uniques([1])) # 1
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+🟨 Javascript
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+function numUniques(array) {
+    // Write your code here.
+    return -1
+}
+
+// Test Cases
+console.log(numUniques([])) // 0
+console.log(numUniques([3, 1, 1, 2, 3, 1, 1, 1, 4])) // 2
+console.log(numUniques([1])) // 1
+
+Number of Duplicated Elements in an Array - 1m
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+✏️ Description
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+Q. Given an unsorted array, return the number of duplicated elements that appear more than once in the array.
+
+Examples:
+• Given an array: [3, 1, 1, 2, 3, 1, 1, 1, 4] // returns 2 (duplicated elements: 3 and 1)
+• Given an array: [1] // returns 0
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+🟦 Python
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+def num_duplicates(array: list[int]) -> int:
+    # Write your code here.
+    pass
+
+# Test Cases
+print(num_duplicates([])) # 0
+print(num_duplicates([3, 1, 1, 2, 3, 1, 1, 1, 4])) # 2
+print(num_duplicates([1])) # 0
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+🟨 Javascript
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+function numDuplicates(array) {
+    // Write your code here.
+    return -1
+}
+
+// Test Cases
+console.log(numDuplicates([])) // 0
+console.log(numDuplicates([3, 1, 1, 2, 3, 1, 1, 1, 4])) // 2
+console.log(numDuplicates([1])) // 0
+
+Binary Search - 3m
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+✏️ Description
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+Q. Given a sorted array of unique positive integers and a target integer, check if the array contains a target using binary search and return its index. If the array does not contain the target, return -1.
+
+Note:
+• Indexes (indices) follow the zero-based numbering rule (i.e. the index of the first element of an array is 0, not 1).
+• Other versions of this problem sometimes return true or false, the item being found in the array or not.
+
+Examples:
+• Given an array: [1, 2, 3, 6, 8, 13, 113, 153, 200], target: 1 // returns 0
+• Given an array: [1, 2, 3, 6, 8, 13, 113, 153, 200], target: 200 // returns 8
+• Given an array: [1, 2, 3, 6, 8, 13, 113, 153, 200], target: 154 // returns -1
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+🟦 Python
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+def binary_earch(array: list[int], target: int) -> int:
+    # Write your code here.
+    pass
+ 
+# Test Cases
+array = [1, 2, 3, 6, 8, 13, 113, 153, 200]
+print(binary_earch(array, 1)) # 0
+print(binary_earch(array, 200)) # 8
+print(binary_earch(array, 8)) # 4
+print(binary_earch(array, 154)) # -1
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+🟨 Javascript
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+function binarySearch(array, target) {
+    // Write your code here.
+    return -1
+}
+
+// Test Cases
+var array = [1, 2, 3, 6, 8, 13, 113, 153, 200]
+console.log(binarySearch(array, 1)) // 0
+console.log(binarySearch(array, 200)) // 8
+console.log(binarySearch(array, 8)) // 4
+console.log(binarySearch(array, 154)) // -1
+
+🌳 Binary Tree
+
+Count Elements in a Binary Tree (iterative / recursive) - 2m
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+✏️ Description
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+Q. Given a binary tree, count the number of elements in the tree.
+
+Example:
+• Given a binary tree:
+                 1
+                / \
+               7   3
+              / \
+             4   5
+// returns 5
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+🟦 Python
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+class TreeNode:
+    def __init__(self, value = 0, left = None, right = None):
+        self.value = value
+        self.left = left
+        self.right = right
+        
+def count_tree(root: TreeNode) -> int:
+    # Write your code here.
+    pass
+
+# Test Cases
+print(count_tree(None), 0)
+print(count_tree(TreeNode(1, TreeNode(2), TreeNode(3))), 3)
+print(count_tree(TreeNode(2, TreeNode(29, TreeNode(26)), TreeNode(4, None, TreeNode(2, TreeNode(9))))), 6)
+print(count_tree(TreeNode()), 1)
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+🟨 Javascript
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+class TreeNode {
+    constructor(value = 0, leftChild = null, rightChild = null) {
+        this.value = value
+        this.left = leftChild
+        this.right = rightChild
+    }
+}
+        
+function countTree(root) {
+    // Write your code here.
+    return -1
+}
+
+// Test Cases
+console.log(countTree(null)) // 0
+console.log(countTree(new TreeNode(1, new TreeNode(2), new TreeNode(3)))) // 3
+console.log(countTree(new TreeNode(2, new TreeNode(29, new TreeNode(26)), new TreeNode(4, null, new TreeNode(2, new TreeNode(9)))))) // 6
+console.log(countTree(new TreeNode())) // 1
+
+Sum Elements in a Binary Tree - 2m
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+✏️ Description
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+Q. Given a binary tree, sum all elements in the tree.
+
+Example:
+• Given a binary tree:
+                 1
+                / \
+               7   3
+              / \
+             4   5
+// returns 20
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+🟦 Python
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+class TreeNode:
+    def __init__(self, value = 0, left = None, right = None):
+        self.value = value
+        self.left = left
+        self.right = right
+
+def sum_tree(root: TreeNode) -> int:
+    # Write your code here.
+    pass
+
+# Test Cases
+print(sum_tree(None), 0)
+print(sum_tree(TreeNode(1, TreeNode(2), TreeNode(3))), 6)
+print(sum_tree(TreeNode(1)), 1)
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+🟨 Javascript
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+class TreeNode {
+    constructor(value = 0, leftChild = null, rightChild = null) {
+        this.value = value
+        this.left = leftChild
+        this.right = rightChild
+    }
+}
+
+function sumBT(root) {
+    // Write your code here.
+    return -1
+}
+
+// Test Cases
+console.log(sumBT(null)) // 0
+console.log(sumBT(new TreeNode(1, new TreeNode(2), new TreeNode(3)))) // 6 
+console.log(sumBT(new TreeNode(1))) // 1
+
+Find Max Element in a Binary Tree - 2m
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+✏️ Description
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+Q. Given a binary tree, find the element with the largest value.
+
+Example:
+• Given a binary tree:
+                 1
+                / \
+               7   3
+              / \
+             4   5
+// returns 7
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+🟦 Python
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+class TreeNode:
+    def __init__(self, value = 0, left = None, right = None):
+        self.value = value
+        self.left = left
+        self.right = right
+
+def tree_max(root: TreeNode):
+    # Write your code here. 
+    return -1
+
+# Test Cases
+print(tree_max(None), float("-inf"))
+print(tree_max(TreeNode(1, TreeNode(2), TreeNode(3))), 3) # 3
+print(tree_max(TreeNode(2, TreeNode(29, TreeNode(26)), TreeNode(4, None, TreeNode(2, TreeNode(9))))), 29)
+print(tree_max(TreeNode(1)), 1)
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+🟨 Javascript
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+class TreeNode {
+    constructor(value = 0, leftChild = null, rightChild = null) {
+        this.value = value
+        this.left = leftChild
+        this.right = rightChild
+    }
+}
+
+function findTreeMax(root) {
+    // Write your code here.
+    return -1       
+}
+
+// Test Cases
+console.log(findTreeMax(null)) // null
+console.log(findTreeMax(new TreeNode(1, new TreeNode(2), new TreeNode(3)))) // 3
+console.log(findTreeMax(new TreeNode(2, new TreeNode(29, new TreeNode(26)), new TreeNode(4, null, new TreeNode(2, new TreeNode(9)))))) // 29
+console.log(findTreeMax(new TreeNode(1))) // 1
+
+Find Height of a Binary Tree - 2m
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+✏️ Description
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+Q. Given a binary tree, find the height of the tree.
+
+Example:
+• Given a binary tree:
+                 1
+                / \
+               7   3
+              / \
+             4   5
+// returns 2
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+🟦 Python
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+class TreeNode:
+    def __init__(self, value = 0, left = None, right = None):
+        self.value = value
+        self.left = left
+        self.right = right
+
+def tree_height(root: TreeNode) -> int:
+    # Write your code here.
+    pass
+
+# Test Cases
+print(tree_height(None), -1) # -1
+print(tree_height(TreeNode(1, TreeNode(2), TreeNode(3))), 1) # 1
+print(tree_height(TreeNode(2, TreeNode(29, TreeNode(26)), TreeNode(4, None, TreeNode(2, TreeNode(9))))), 3) # 3
+print(tree_height(TreeNode()), 0) # 0
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+🟨 Javascript
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+class TreeNode {
+    constructor(value = 0, leftChild = null, rightChild = null) {
+        this.value = value
+        this.left = leftChild
+        this.right = rightChild
+    }
+}
+
+function findTreeHeight(root) {
+    // Write your code here.
+    return -1
+}
+
+// Test Cases
+console.log(findTreeHeight(null), -1)
+console.log(findTreeHeight(new TreeNode(1, new TreeNode(2), new TreeNode(3))), 1)
+console.log(findTreeHeight(new TreeNode(2, new TreeNode(29, new TreeNode(26)), new TreeNode(4, null, new TreeNode(2, new TreeNode(9))))), 3)
+
+Find Element in a Binary Tree Using BFS -2m
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+✏️ Description
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+Q. Given a binary tree and a target element's value, determine if the tree contains the target using breadth first search (BFS).
+
+Examples:
+• Given a binary tree:
+                 3
+                / \
+              29   4
+              /     \
+             2       2
+                    /
+                   9
+• For target: 1 // returns False
+• For target: 2 // returns True
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+🟦 Python
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+class TreeNode:
+    def __init__(self, value = 0, left = None, right = None):
+        self.value = value
+        self.left = left
+        self.right = right
+
+def find_bfs(root: TreeNode, target: int) -> bool:
+    # Write your code here. 
+    pass
+
+# Test Cases
+tree1 = TreeNode(3, TreeNode(29, TreeNode(2)), TreeNode(4, None, TreeNode(2, TreeNode(9))))
+print(find_bfs(None, 1), False)
+print(find_bfs(tree1, 9), True)
+print(find_bfs(tree1, 1), False)
+print(find_bfs(tree1, 2), True)
+print(find_bfs(TreeNode(1), 2), False)
+ 
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+🟨 Javascript
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+class TreeNode {
+    constructor(value = 0, leftChild = null, rightChild = null) {
+        this.value = value
+        this.left = leftChild
+        this.right = rightChild
+    }
+}
+
+function BFSTree(root, target) { 
+    // Write your code here.
+    return false
+}
+
+// Test Cases
+var tree1 = new TreeNode(3, new TreeNode(29, new TreeNode(2)), new TreeNode(4, null, new TreeNode(2, new TreeNode(9))))
+console.log(BFSTree(null, 1)) // false
+console.log(BFSTree(tree1, 9)) // true
+console.log(BFSTree(tree1, 1)) // false
+console.log(BFSTree(tree1, 2)) // true
+console.log(BFSTree(new TreeNode(1), 2)) // false
+
+Find Element in a Binary Tree Using DFS - 2m
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+✏️ Description
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+Q. Given a binary tree and a target element's value, determine if the tree contains the target using depth first search (DFS).
+
+Examples:
+• Given a binary tree:
+                 3
+                / \
+              29   4
+              /     \
+             2       2
+                    /
+                   9
+• For target: 1 // returns False
+• For target: 2 // returns True
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+🟦 Python
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+class TreeNode:
+    def __init__(self, value = 0, left = None, right = None):
+        self.value = value
+        self.left = left
+        self.right = right
+
+def find_dfs(root: TreeNode, target: int) -> bool:
+    # Write your code here. 
+    pass
+
+# Test Cases
+tree1 = TreeNode(3, TreeNode(29, TreeNode(2)), TreeNode(4, None, TreeNode(2, TreeNode(9))))
+print(find_dfs(None, 1), False)
+print(find_dfs(tree1, 9), True)
+print(find_dfs(tree1, 1), False)
+print(find_dfs(tree1, 2), True)
+print(find_dfs(TreeNode(1), 2), False)
+ 
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+🟨 Javascript
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+class TreeNode {
+    constructor(value = 0, leftChild = null, rightChild = null) {
+        this.value = value
+        this.left = leftChild
+        this.right = rightChild
+    }
+}
+
+function DFSTree(root, target) { 
+    // Write your code here.
+    return false
+}
+
+// Test Cases
+var tree1 = new TreeNode(3, new TreeNode(29, new TreeNode(2)), new TreeNode(4, null, new TreeNode(2, new TreeNode(9))))
+console.log(DFSTree(null, 1)) // false
+console.log(DFSTree(tree1, 9)) // true
+console.log(DFSTree(tree1, 1)) // false
+console.log(DFSTree(tree1, 2)) // true
+console.log(DFSTree(new TreeNode(1), 2)) // false
+
+🌲 Binary Search Tree
+
+Find Element in a Binary Search Tree - 1m
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+✏️ Description
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+Q. Given a binary search tree and a target integer, check if the tree contains a target.
+
+Examples:
+• Given a binary search tree:
+                  8
+                /   \
+               3     10
+              / \      \
+             1   6      14
+                       /
+                     13
+• For target: 4 // returns False
+• For target: 14 // returns True
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+🟦 Python
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+class TreeNode:
+    def __init__(self, value = 0, left = None, right = None):
+        self.value = value
+        self.left = left
+        self.right = right
+
+def search_bst(root: TreeNode, target: int) -> bool:
+    # Write your code here.
+    pass
+
+# Test Cases
+tree = TreeNode(8, TreeNode(3, TreeNode(1), TreeNode(6)), TreeNode(10, None, TreeNode(14, TreeNode(13))))
+print(search_bst(None, 1), False)
+print(search_bst(tree, 1), True)
+print(search_bst(tree, 14), True)
+print(search_bst(tree, 2), False)
+print(search_bst(tree, 13), True)
+
+# Given tree:
+#                   8
+#                 /   \
+#                3     10
+#               / \      \
+#              1   6      14
+#                        /
+#                      13
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+🟨 Javascript
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+class TreeNode {
+    constructor(value = 0, leftChild = null, rightChild = null) {
+        this.value = value
+        this.left = leftChild
+        this.right = rightChild
+    }
+}
+
+function searchBST(root, target) {
+    // Write your code here.
+    return false
+}
+
+// Test Cases
+let tree = new TreeNode(8, new TreeNode(3, new TreeNode(1), new TreeNode(6)), new TreeNode(10, null, new TreeNode(14, new TreeNode(13))))
+console.log(searchBST(null, 1)) // false
+console.log(searchBST(tree, 1)) // true
+console.log(searchBST(tree, 14)) // true
+console.log(searchBST(tree, 2)) // false
+console.log(searchBST(tree, 13)) // true
+console.log(searchBST(new TreeNode(), 0)) // true
+
+// Given tree:
+//                   8
+//                 /   \
+//                3     10
+//               / \      \
+//              1   6      14
+//                        /
+//                      13
+
+Insert Element into a Binary Search Tree - 1m
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+✏️ Description
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+Q. Given a binary search tree and a target element's value, insert the target in the appropriate position.
+
+Examples:
+• Given a binary search tree:
+              6
+            /   \
+           3     8
+          / \ 
+         2   4
+
+• For target: 7 // returns:
+              6
+            /   \
+           3     8
+          / \    /
+         2   4  7
+        /     \
+       1       5
+
+• For target: 1 // returns:
+              6
+            /   \
+           3     8
+          / \
+         2   4
+        /
+       1
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+🟦 Python
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+class TreeNode:
+    def __init__(self, value = 0, left = None, right = None):
+        self.value = value
+        self.left = left
+        self.right = right
+
+def arrayify_tree(root: TreeNode):
+    if root is None:
+        return []
+    queue = []
+    array = []
+    queue.append(root)
+    while (len(queue) != 0):
+        node = queue.pop(0)
+        array.append(node.value)
+        if (node.left):
+            queue.append(node.left)
+        if (node.right):
+            queue.append(node.right)
+    return array
+
+def insert_bst(root: TreeNode, target: int) -> TreeNode:
+    # Write your code here.
+    pass    
+
+# Test Cases
+tree = TreeNode(6, TreeNode(3, TreeNode(2), TreeNode(4)), TreeNode(8))
+print(arrayify_tree(insert_bst(tree, 7))) # [6, 3, 8, 2, 4, 7]
+print(arrayify_tree(insert_bst(tree, 5))) # [6, 3, 8, 2, 4, 7, 5]
+print(arrayify_tree(insert_bst(tree, 1))) # [6, 3, 8, 2, 4, 7, 1, 5]
+print(arrayify_tree(insert_bst(None, 1))) # [1]
+
+# Given tree:
+#              6
+#            /   \
+#           3     8
+#          / \    /
+#         2   4  7
+#        /     \
+#       1       5
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+🟨 Javascript
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+class TreeNode {
+    constructor(value = 0, leftChild = null, rightChild = null) {
+        this.value = value
+        this.left = leftChild
+        this.right = rightChild
+    }
+}
+
+function arrayifyTree(root) {
+    if (!root) { return [] }
+    var queue = []
+    var array = []
+    queue.push(root)
+    while (queue.length !== 0) {
+        var node = queue.shift()
+        array.push(node.value)
+        if (node.left) { queue.push(node.left) }
+        if (node.right) { queue.push(node.right) }
+    }
+    return array
+}
+
+function insertBST(root, target) {
+    // Write your code here.
+    return new TreeNode()
+}
+
+// Test Cases
+var tree = new TreeNode(6, new TreeNode(3, new TreeNode(2), new TreeNode(4)), new TreeNode(8))
+
+insertBST(tree, 7)
+console.log(arrayifyTree(tree), [6, 3, 8, 2, 4, 7])
+insertBST(tree, 5)
+console.log(arrayifyTree(tree), [6, 3, 8, 2, 4, 7, 5])
+insertBST(tree, 1)
+console.log(arrayifyTree(tree), [6, 3, 8, 2, 4, 7, 1, 5])
+var tree2 = insertBST(null, 1)
+console.log(tree2.value, 1)
+
+// Final tree:
+//              6
+//            /   \
+//           3     8
+//          / \    /
+//         2   4  7
+//        /     \
+//       1       5
+
+Validate a Binary Search Tree - 4m
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+✏️ Description
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+Q. Given a binary tree, determine if it is a valid binary search tree (BST).
+
+Examples:
+• Given a binary tree:
+        2
+       / \
+      1   3
+// returns True
+
+• Given a binary tree:
+        1
+       / \
+      2   3
+// returns False
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+🟦 Python
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+class TreeNode:
+    def __init__(self, value = 0, left = None, right = None):
+        self.value = value
+        self.left = left
+        self.right = right       
+        
+def is_valid_bst(root: TreeNode) -> bool:
+    # Write your code here.
+    pass
+
+# Test Cases
+tree1 = TreeNode(2, TreeNode(1), TreeNode(3))
+tree2 = TreeNode(1, TreeNode(2), TreeNode(3))
+tree3 = TreeNode(8, TreeNode(3, TreeNode(1), TreeNode(6)), TreeNode(10, None, TreeNode(14, TreeNode(13))))
+tree4 = TreeNode(8, TreeNode(3, TreeNode(1), TreeNode(9)), TreeNode(10, None, TreeNode(14, TreeNode(13))))
+print(is_valid_bst(None), True)
+print(is_valid_bst(tree1), True)
+print(is_valid_bst(tree2), False)
+print(is_valid_bst(tree3), True)
+print(is_valid_bst(tree4), False)
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+🟨 Javascript
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+class TreeNode {
+    constructor(value = 0, leftChild = null, rightChild = null) {
+        this.value = value
+        this.left = leftChild
+        this.right = rightChild
+    }
+}
+
+function isValidBST(tree) {
+    // Write your code here.
+    return false
+}
+
+// Test Cases
+const tree1 = new TreeNode(2, new TreeNode(1), new TreeNode(3))
+const tree2 = new TreeNode(1, new TreeNode(2), new TreeNode(3))
+const tree3 = new TreeNode(8, new TreeNode(3, new TreeNode(1), new TreeNode(6)), new TreeNode(10, null, new TreeNode(14, new TreeNode(13))))
+const tree4 = new TreeNode(8, new TreeNode(3, new TreeNode(1), new TreeNode(9)), new TreeNode(10, null, new TreeNode(14, new TreeNode(13))))
+console.log(isValidBST(null)) // true
+console.log(isValidBST(tree1)) // true
+console.log(isValidBST(tree2)) // false
+console.log(isValidBST(tree3)) // true
+console.log(isValidBST(tree4)) // false
+console.log(isValidBST(new TreeNode())) // true
+
+💡 Dynamic Programming
+
+Find Kth Element in the Fibonacci Sequence - 2m
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+✏️ Description
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+Q. Write a function which returns the Kth element of the Fibonacci sequence. The Fibonacci sequence is defined as a sequence in which each number is the sum of the preceding two numbers in the sequence. For the purpose of this question, the first two terms of the sequence are both 1, i.e. fib(0) = fib(1) = 1.
+
+Examples:
+Input: k = 2
+Output: 2
+Explanation:
+fib(2) = fib(0) + fib(1) = 1 + 1 = 2
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+🟦 Python
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+def fib(k: int) -> int:
+    # Write your code here.
+    pass
+
+# Test Cases
+print(fib(0)) # 1
+print(fib(5)) # 8
+print(fib(11)) # 144
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+🟨 Javascript
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+function fib(k) { // number -> number
+  return 0;
+}
+
+// Test Cases
+console.log(fib(0)) // 1
+console.log(fib(5)) // 8
+console.log(fib(11)) // 144
+
+
+
+
