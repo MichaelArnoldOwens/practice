@@ -128,15 +128,15 @@ def arrayifyTree(root: TreeNode):
 
 
 from typing import List
-
+from collections import deque
 
 def printTree(root: TreeNode) -> [[int]]:
     if not root:
         return []
-    q = [[root]]
+    q = deque([[root]])
     result = []
     while q:
-        curr_level = q.pop(0)
+        curr_level = q.popleft()
         curr_level_values = []
         next_level_nodes = []
         for node in curr_level:
