@@ -28,17 +28,14 @@ Explanation:
 
 
 
-def editor(cmds):
+def simulate_undo(cmds):
     if len(cmds) == 0:
         return ''
     buffer = []
     last_buffer = []
     for c in cmds:
-        print(last_buffer)
-        print(buffer)
         split_cmd = c.split(' ')
         cmd = split_cmd[0]
-        print(cmd)
         
         if cmd == 'append':
             buffer.append(split_cmd[1])
@@ -46,20 +43,20 @@ def editor(cmds):
         if cmd == 'backspace':
             if len(buffer) > 0:
                 new_str = buffer[-1][:-1]
-                print('new_str:', new_str)
                 if len(new_str) == 0:
                     last_buffer.append(('backspace', buffer.pop()))
                 else:
                     last_buffer.append(('backspace', buffer[-1][-1]))
                     buffer[-1] = buffer[-1][:-1]
         if cmd == 'undo':
-            [undo_cmd, value] = last_buffer[-1]
-            if undo_cmd == 'backspace':
-                buffer.append(value)
-                last_buffer.pop()
-            if undo_cmd == 'append':
-                buffer.pop()
-                last_buffer.pop()
+            if len(last_buffer) > 0:
+                [undo_cmd, value] = last_buffer[-1]
+                if undo_cmd == 'backspace':
+                    buffer.append(value)
+                    last_buffer.pop()
+                if undo_cmd == 'append':
+                    buffer.pop()
+                    last_buffer.pop()
 
     return ''.join(buffer)
         
@@ -68,4 +65,48 @@ def editor(cmds):
 
 
 commands = ["append a", "append b", "backspace", "append c", "undo", "append d", "undo", "append e"]
-print(editor(commands))
+print(simulate_undo(commands))
+# Test Case 1: Basic operations
+commands = ["append a", "append b", "append c", "backspace", "undo"]
+result = simulate_undo(commands)
+print(result == "abc")
+
+# Test Case 2: Multiple undos
+commands = ["append a", "append b", "append c", "backspace", "undo", "undo"]
+result = simulate_undo(commands)
+print(result == "ab")
+
+# Test Case 3: Empty input
+commands = []
+result = simulate_undo(commands)
+print(result == "")
+
+# Test Case 4: Complex operations
+commands = ["append a", "append b", "backspace", "append c", "undo", "append d", "undo", "append e"]
+result = simulate_undo(commands)
+print(result == "ae")
+
+# Test Case 5: Undo with no history
+commands = ["undo"]
+result = simulate_undo(commands)
+print(result == "")
+
+# Test Case 6: Backspace with empty text
+commands = ["backspace"]
+result = simulate_undo(commands)
+print(result == "")
+
+# Test Case 7: Multiple backspaces
+commands = ["append a", "append b", "append c", "backspace", "backspace"]
+result = simulate_undo(commands)
+print(result == "a")
+
+# Test Case 8: Undo after multiple backspaces
+commands = ["append a", "append b", "append c", "backspace", "backspace", "undo", "undo"]
+result = simulate_undo(commands)
+print(result == "abc")
+
+# Test Case 9: Continuous undos and backspaces
+commands = ["append a", "append b", "append c", "undo", "undo", "undo", "backspace", "backspace", "backspace", "append d", "append e", "append f"]
+result = simulate_undo(commands)
+print(result == "def")
