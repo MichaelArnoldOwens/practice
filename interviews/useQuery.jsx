@@ -22,6 +22,7 @@
  *
  */
 import { useState, useEffect, useCallback } from "react";
+
 const useQuery = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [data, setData] = useState([]);
@@ -34,65 +35,62 @@ const useQuery = () => {
     controller.abort();
     setController(new AbortController());
     clearInterval(intervalId);
-    setIsLoading = false
+    setIsLoading(false); // Reset isLoading on cancel
   };
 
-  const trigger = useCallback(
-    (query) =>
-      fetch(query, { post, signal })
-        .then((response) => {
-          // wrap in useCallback() ?
-          if (isLoading) {
-            cancel();
-          }
-          setIsLoading(true);
-          if (response.ok) {
-            return response.json();
-          } else {
-            const error = `HTTP Error ${response.status}`;
-            setError(error);
-            throw new Error(error);
-          }
-        })
-        .then(({ token }) => {
-          let interval = 1000;
-          const intervalId = setInterval(() => {
-            fetch(`/query/${token}`, { signal })
-              .then((response) => {
-                if (response.status === 200) {
-                  response.json();
-                } else {
-                  const error = `HTTP Error ${response.status}`;
-                  setError(error);
-                  throw new Error(error);
-                }
-              })
-              .then(({ type, data, error }) => {
-                if (error) {
-                  setError(error);
-                  clearInterval(intervalId);
-                  return;
-                }
-                if (type === "AVAILABLE") {
-                  interval = 0;
-                  setData((prevData) => [...prevData, data]);
-                } else if (type === "DONE") {
-                  setData((prevData) => [...prevData, data]);
-                  setIsLoading(false);
-                  clearInterval(intervalId);
-                }
-              });
-          }, interval);
-          setIntervalId(intervalId);
-        })
-        .catch((e) => setError(e)),
-    [signal]
-  );
+  const fetchData = useCallback(async (query) => {
+    try {
+      if (isLoading) {
+        cancel();
+      }
+      setIsLoading(true);
+
+      const response = await fetch(query, { signal });
+
+      if (!response.ok) {
+        const error = `HTTP Error ${response.status}`;
+        setError(error);
+        throw new Error(error);
+      }
+
+      const { token } = await response.json();
+
+      let interval = 1000;
+      const intervalId = setInterval(async () => {
+        const queryResponse = await fetch(`/query/${token}`, { signal });
+
+        if (!queryResponse.ok) {
+          const error = `HTTP Error ${queryResponse.status}`;
+          setError(error);
+          throw new Error(error);
+        }
+
+        const { type, data, error } = await queryResponse.json();
+
+        if (error) {
+          setError(error);
+          clearInterval(intervalId);
+          return;
+        }
+        if (type === "AVAILABLE") {
+          interval = 0;
+          setData(prevData => [...prevData, data]);
+        } else if (type === "DONE") {
+          setData(prevData => [...prevData, data]);
+          setIsLoading(false);
+          clearInterval(intervalId);
+        }
+      }, interval);
+      setIntervalId(intervalId);
+    } catch (e) {
+      setError(e.message);
+      setIsLoading(false);
+    }
+  }, [signal, isLoading, cancel]);
 
   useEffect(() => {
     return () => cancel();
   }, [cancel]);
 
-  return { isLoading, data, error, trigger, cancel };
+  return { isLoading, data, error, fetchData, cancel };
 };
-
