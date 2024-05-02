@@ -1,3 +1,12 @@
+/*
+ * create a React hook called useQuery() => {loading, data, error, trigger, cancel}
+ *
+ * follow-ups: 
+ *  a. handle multiple trigger calls
+ *  b. only allow one single call to exist at a time
+ *  c. allow multiple calls to exist at a time
+ *
+ */
 import {useState} from 'react'
 const useQuery = () => {
   const [isLoading, setIsLoading] = useState(false) 
@@ -18,15 +27,21 @@ const useQuery = () => {
       cancel()
     }
     setIsLoading(true)
-    if (response.status === 200) {
-
-    
-    response.json().then(({token}) => {
+      if (response.status === 200) {
+      return response.json
+      } else {
+        setError(`HTTP Error ${response.status}`)
+      }
+    }).then(({token}) => {
       let interval = 1000
       const intervalId = setInterval(() => {
-        fetch(`/query/${token}`, {signal}).then(response => {
+        fetch(`/query/${token}`, { signal }).then(response => {
           if (response.status === 200) {
-            response.json().then(({type, data, error })=> {e
+            response.json()
+          } else {
+              setError(`HTTP Error ${response.status}`)
+          }
+      }).then(({type, data, error })=> {
               if (error) {
                 setError(error)
                 clearInterval(intervalId)
@@ -42,17 +57,9 @@ const useQuery = () => {
                 return
               }
             })
-          } else {
-            setError(`HTTP Error ${response.status}`)
-          }
-          })
       }, interval)
       setIntervalId(intervalId)
-    })
-  } else {
-    setError(`HTTP Error ${response.status}`)
-  }
-  }).catch(e => setError(e))
+    }).catch(e => setError(e))
 
   
 
