@@ -20,6 +20,30 @@ def pairStars(input, result=''):
     else:
         return pairStars(input[1:], result + input[0])
 
+# def pairStars(word, index=0):
+#     if index == len(word):
+#         return ''
+#     substring = pairStars(word, index + 1)
+
+#     if len(substring) > 0 and word[index] == substring[0]:
+#         return word[index] + '*' + substring
+
+#     return word[index] + substring
+
+
+def pairStars(word: str, index=0) -> str:
+  if len(word) <= 1:
+    return word
+
+  if index == len(word)-1:
+    return word[index]
+
+  if word[index] == word[index+1]:
+    return word[index] + "*" + pairStars(word, index + 1)
+
+  return word[index] + pairStars(word, index + 1)
+
+
 
 print( pairStars("hello") == "hel*lo" )
 print( pairStars("xxyy") == "x*xy*y" )
