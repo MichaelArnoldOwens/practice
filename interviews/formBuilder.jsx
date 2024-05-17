@@ -4,7 +4,8 @@ import Debugger from "./Debugger";
 import "./App.css";
 
 // -- WELCOME! --
-// is working on a generic “Form” component as part of
+// NOTE: i left a bug in here on purpose to remind me of a certain React detail. i also left an opportunity to optimize rendering pattern
+// We are working on a generic “Form” component as part of
 // a larger component library that will allow our developers
 // to quickly stand up forms without having to worry about
 // scaffolding individual inputs, submit buttons, etc.
@@ -62,8 +63,6 @@ const formSchema = [
 // Let's try to hit a few of the use cases from above
 // uuid()
 const Input = ({format, label, value, placeholder, updateState, position, validation}) => {
-  // console.log('updateState:', updateState)
-  // console.log(validation)
   return <div>
     <div>{label}</div>
     <input type={format} value={value} onChange={e => updateState({value: e.target.value, position, label, isValid: validation ? validation(e.target.value) : true})} />
@@ -74,18 +73,12 @@ const Form = ({ formSchema, onSubmit }) => {
   const [formDataObj, setFormDataObj] = useState([])
   const [areValid, setAreValid] = useState([false])
   const [isValidForm, setIsValidForm] = useState(false)
-  // console.log(formDataObj)
 
   useEffect(() => {
-    console.log('areValid:', areValid)
     setIsValidForm(areValid.every(x => !!x))
   },[areValid, setIsValidForm])
 
   const updateState = ({label, value, position, isValid}) => {
-    // console.log('value:', value)
-    // console.log(formDataObj)
-    // console.log('areValid', areValid)
-    console.log('isValid in updateSTate', isValid)
     // areValid[position] = isValid
     setAreValid(curr => {
       curr[position] = isValid
@@ -100,7 +93,6 @@ const Form = ({ formSchema, onSubmit }) => {
 
 
 
-  console.log('isValidForm:', isValidForm)
 
   return <div>
     {formSchema.map((v, idx) => <Input {...v} position={idx} updateState={updateState} value={formDataObj[idx]?.value} />) }
@@ -111,7 +103,6 @@ const Form = ({ formSchema, onSubmit }) => {
 const App = () => {
   const [submittedValues, setSubmittedValues] = useState();
   const onSubmit = useCallback((formData) => {
-    console.log('on submit', formData)
     // {"name": "John", } return the bare minimum obj back
     setSubmittedValues(formData);
   }, []);
