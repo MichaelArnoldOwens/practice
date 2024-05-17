@@ -4,7 +4,7 @@ import Debugger from "./Debugger";
 import "./App.css";
 
 // -- WELCOME! --
-// Rippling is working on a generic “Form” component as part of
+// is working on a generic “Form” component as part of
 // a larger component library that will allow our developers
 // to quickly stand up forms without having to worry about
 // scaffolding individual inputs, submit buttons, etc.
