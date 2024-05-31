@@ -83,6 +83,27 @@ function bfsFromNode(graph, startNode, callback, visited = new Set()) {
   }
 }
 
+function shorestPathFromNode(graph, startNode) {
+  let distances = new Map();
+
+  for (let node of Object.keys(graph)) {
+    if (node === startNode) {
+      distances.set(node, 0);
+    } else {
+      distances.set(node, Infinity);
+    }
+  }
+
+  bfsFromNode(graph, startNode, currentNode => {
+    for (let neighbor of graph[currentNode]) {
+      let currentDistance = distances.get(neighbor);
+      distances.set(neighbor, Math.min(currentDistance, distances.get(currentNode) + 1));
+    }
+  });
+
+  return distances;
+}
+
 let graph = {
   'A': ['B', 'C'],
   'B': [],
@@ -92,4 +113,6 @@ let graph = {
   'F': ['C'],
 }
 
-dfsFromNode(graph, 'A', node => console.log(node), new Set())
+// dfsFromNode(graph, 'A', node => console.log(node), new Set())
+
+console.log(shorestPathFromNode(graph, 'A'));
