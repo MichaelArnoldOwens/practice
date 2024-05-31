@@ -41,3 +41,13 @@ print(count_tree(None), 0)
 print(count_tree(TreeNode(1, TreeNode(2), TreeNode(3))), 3)
 print(count_tree(TreeNode(2, TreeNode(29, TreeNode(26)), TreeNode(4, None, TreeNode(2, TreeNode(9))))), 6)
 print(count_tree(TreeNode()), 1)
+
+def count_tree_recursive(root: TreeNode) -> int:
+    if not root:
+        return 0
+    return 1 + count_tree_recursive(root.left) + count_tree_recursive(root.right)
+
+print('recursive solution:')
+print(count_tree_recursive(TreeNode(1, TreeNode(2), TreeNode(3))), 3)
+print(count_tree(TreeNode(2, TreeNode(29, TreeNode(26)), TreeNode(4, None, TreeNode(2, TreeNode(9))))), 6)
+print(count_tree(TreeNode()), 1)
