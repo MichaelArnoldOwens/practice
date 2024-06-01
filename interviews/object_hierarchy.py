@@ -81,28 +81,45 @@ ORG_CHART =  {
 
 class OrgManager:
     def __init__(self, org_chart):
-        def helper(node):
-            if type(node) != dict or len(node.keys()) == 0:
+        def helper(node, name):
+            if not isinstance(node, dict) or len(node.keys()) == 0:
+                self.result[name] = {'type': 'ic', 'directs': 0, 'total': 0 }
                 return { 'type': 'ic', 'directs': 0, 'total': 0 }
             direct = len(node.keys())
             total = 0
-            for name in node.keys():
-                reports = helper(node[name])
+            for child_name, child_node in node.items():
+                reports = helper(child_node, child_name)
                 total += 1 + reports['total']
 
-            return { 'type': 'manager', 'total': total, 'directs': direct }
+            self.result[name] = { 'type': 'manager', 'total': total, 'directs': direct }
+            return self.result[name]
 
 
 
         self.result = {}
         for name in org_chart.keys():
-            reports = helper(org_chart[name])
+            reports = helper(org_chart[name], name)
             self.result[name] = {
-                'type': 'manager' if len(reports) > 0 else 'ic',
+                'type': 'manager' if reports['directs'] > 0 else 'ic',
                 'direct': reports['directs'],
                 'total': reports['total']
             }
         print(self.result)
 
 OrgManager(ORG_CHART)
+ORG_CHART = {
+	'annie': {
+	    'sue': {
+			'pizza': None,
+			'chicken': {
+				'charles': {
+					 'bobby': None
+				}
+			}
+		}
+	},
+	'bob': None
+}
+# OrgManager(ORG_CHART)
+
 
