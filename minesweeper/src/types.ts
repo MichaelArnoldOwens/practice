@@ -1,15 +1,27 @@
 export enum CellType {
-  Unmarked,
+  Unmarked, // the default
   Mine,
   Mark,
   Flag,
+  Numberless,
 }
 
-export type BoardDimType = number[];
-export type CellIndex = BoardDimType;
+export type BoardDimsType = number[];
+export type CellIndex = BoardDimsType;
+export type Cell =
+  | CellType.Unmarked
+  | CellType.Mine
+  | CellType.Flag
+  | CellType.Numberless
+  | CellType.Mark;
+export type VisibleBoardRowType = Cell[];
+
+export type VisibleBoardType = VisibleBoardRowType[];
+
+export type MineSetType = Set<number>;
 
 export interface SettingType {
-  boardDims: BoardDimType;
+  boardDims: BoardDimsType;
   numMines: number;
 }
 
@@ -18,5 +30,3 @@ export interface DifficultyType {
   MEDIUM: SettingType;
   HARD: SettingType;
 }
-
-

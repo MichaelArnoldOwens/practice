@@ -4,6 +4,7 @@ import {
   pickRandomMines,
   cellNumToRowColIndex,
   rowColIndexToCellNum,
+  copyVisibleBoard,
 } from "@/utils/board_utils";
 
 describe("buildBoard", () => {
@@ -65,5 +66,24 @@ describe("rowColIndexToCellNum", () => {
 
     result = rowColIndexToCellNum([8, 8], boardDims);
     expect(result).toBe(81);
+  });
+});
+
+describe("copyVisibleBoard", () => {
+  it("should copy a 2d array and not give a ref", () => {
+    const original = [
+      [1, 2, 3, 4, 5],
+      [6, 7, 8, 9, 10],
+      [11, 12, 13, 14, 15],
+    ];
+    const copy = copyVisibleBoard(original);
+    expect(copy).toEqual(original);
+
+    original[0] = original[0].map(() => -1);
+    expect(original[0]).toEqual([-1, -1, -1, -1, -1]);
+
+    expect(copy).not.toEqual(original);
+    copy[0] = copy[0].map(() => 0);
+    expect(copy[0]).toEqual([0, 0, 0, 0, 0]);
   });
 });

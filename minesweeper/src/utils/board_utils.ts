@@ -1,13 +1,20 @@
-import { BoardDimType, CellIndex, CellType, SettingType } from "../types";
+import {
+  BoardDimsType,
+  CellIndex,
+  CellType,
+  SettingType,
+  VisibleBoardRowType,
+  VisibleBoardType,
+} from "@/types";
 
-export const buildBoard = (boardDims: BoardDimType) => {
+export const buildBoard = (boardDims: BoardDimsType) => {
   const [numRows, numCols] = boardDims;
   if (numRows === 0 && numCols === 0) {
     throw new Error("must enter valid row and col count");
   }
-  const result: CellType[][] = [];
+  const result: VisibleBoardType = [];
   for (let i = 0; i < numRows; i++) {
-    const newRow: CellType[] = [];
+    const newRow: VisibleBoardRowType = [];
     for (let col = 0; col < numCols; col++) {
       newRow.push(CellType.Unmarked);
     }
@@ -32,7 +39,7 @@ export const pickRandomMines = (difficulty: SettingType) => {
 
 export const cellNumToRowColIndex = (
   cellNum: number,
-  boardDims: BoardDimType,
+  boardDims: BoardDimsType,
 ) => {
   const [, numCols] = boardDims;
   const cellIndex = cellNum - 1;
@@ -45,10 +52,14 @@ export const cellNumToRowColIndex = (
 
 export const rowColIndexToCellNum = (
   cellIndex: CellIndex,
-  boardDims: BoardDimType,
+  boardDims: BoardDimsType,
 ) => {
   const [, numCols] = boardDims;
   const [rowIndex, colIndex] = cellIndex;
 
   return rowIndex * numCols + colIndex + 1;
+};
+
+export const copyVisibleBoard = (board: VisibleBoardType) => {
+  return board.map((row) => row.slice());
 };
