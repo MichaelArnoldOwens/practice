@@ -1,5 +1,4 @@
 function deepestNode(root) {
-
   function helper(root) {
     if (!root) {
       return [null, 0];
