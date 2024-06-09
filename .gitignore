@@ -1,6 +1,6 @@
 # Created by .ignore support plugin (hsz.mobi)
 ### Python template
-*/node_modules
+node_modules
 .DS_STORE
 # Byte-compiled / optimized / DLL files
 __pycache__/
