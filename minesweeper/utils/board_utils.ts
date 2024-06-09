@@ -1,9 +1,4 @@
-import { SettingType } from "@/constants";
-import { useState } from "react";
-// import { cellNumToRowCol } from "utils/board_utils";
-interface BoardProps {
-  difficulty: SettingType;
-}
+// import { CELL_TYPE } from "@/constants";
 
 export const buildBoard = (boardDims) => {
   const [numRows, numCols] = boardDims;
@@ -31,14 +26,3 @@ export const pickRandomMines = (difficulty: SettingType) => {
   }
 };
 
-export const Board = ({ difficulty }: BoardProps) => {
-  return <div style={{ backgroundColor: 'blue' }}> board is here</div>
-  const { boardDims } = difficulty;
-  const [visibleBoard, setVisibleBoard] = useState(buildBoard(boardDims));
-  // cellNumToRowCol
-
-  const cell8loc = cellNumToRowCol(8, boardDims);
-
-  const [mineSet, setMineSet] = useState(pickRandomMines(difficulty));
-  return <div>board</div>;
-};
