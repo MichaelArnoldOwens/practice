@@ -1,4 +1,3 @@
-
 '''
 ❓ PROMPT
 You are asked to write a program that simulates an ATM machine. The program should allow users to perform the following operations:
@@ -50,7 +49,7 @@ class ATM:
 
   def withdraw(self, acc, amt):
     if amt > self.accounts[acc]:
-      return print(f'Withdrawal failed: Insufficient funds.')
+      return print('Withdrawal failed: Insufficient funds.')
     
     self.accounts[acc] -= amt
     return f'Withdrawal successful: Your ne wbalance is ${self.accounts[acc]:.2f}.'
