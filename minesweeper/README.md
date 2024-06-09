@@ -1,4 +1,15 @@
-# React + TypeScript + Vite
+# Minesweeper React + Typescript + Vite
+The main goal of this project is to build a minesweeper clone in react.
+
+Some secondary goals:
+1. become familiar with new tooling like Vite
+    - [DONE] be comfortable modifying tsconfig and vite config
+2. [DONE] configure my nvim dev environment to use an LSP and plug into the project's settings
+3. [ALWAYS IN PROGRESS] discover and refine workflows as I integrate nvim to become my daily driver
+
+
+
+### Bootstrapped with React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
