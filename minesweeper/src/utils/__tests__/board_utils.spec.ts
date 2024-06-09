@@ -1,5 +1,5 @@
 import { SettingType } from "@/types"
-import { buildBoard, pickRandomMines, cellNumToRowCol } from "@/utils/board_utils"
+import { buildBoard, pickRandomMines, cellNumToRowColIndex } from "@/utils/board_utils"
 
 
 describe('buildBoard', () => {
@@ -23,30 +23,26 @@ describe('pickRandomMines', () => {
   })
 })
 
-describe('cellNumToRowCol', () => {
-  it.skip('should return the row and col num given a cell number', () => {
+describe('cellNumToRowColIndex', () => {
+  it('should return the row and col num given a cell number', () => {
     const boardDims = [9, 9]
-    let result = cellNumToRowCol(5, boardDims)
+    let result = cellNumToRowColIndex(80, boardDims)
+    expect(result).toEqual([8, 7])
+
+    result = cellNumToRowColIndex(5, boardDims)
     expect(result).toEqual([0, 4])
 
-    result = cellNumToRowCol(12, boardDims)
+    result = cellNumToRowColIndex(12, boardDims)
     expect(result).toEqual([1, 2])
 
-    result = cellNumToRowCol(1, boardDims)
+    result = cellNumToRowColIndex(1, boardDims)
     expect(result).toEqual([0, 0])
 
-    result = cellNumToRowCol(81, boardDims)
-    expect(result).toEqual([8, 8])
-  })
-  it.only('test', () => {
-    const boardDims = [9, 9]
-    let result = cellNumToRowCol(80, boardDims)
-    // expect(result).toEqual([8, 7])
 
-    // result = cellNumToRowCol(1, boardDims)
-    // expect(result).toEqual([0, 0])
+    result = cellNumToRowColIndex(1, boardDims)
+    expect(result).toEqual([0, 0])
 
-    result = cellNumToRowCol(9, boardDims)
+    result = cellNumToRowColIndex(9, boardDims)
     expect(result).toEqual([0, 8])
   })
 })

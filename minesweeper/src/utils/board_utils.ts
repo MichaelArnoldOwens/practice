@@ -30,17 +30,12 @@ export const pickRandomMines = (difficulty: SettingType) => {
   return result
 };
 
-export const cellNumToRowCol = (cellNum: number, boardDims: BoardDimType) => {
+export const cellNumToRowColIndex = (cellNum: number, boardDims: BoardDimType) => {
   const [, numCols] = boardDims;
-  const rowNum = Math.floor(cellNum / numCols);
-
+  const cellIndex = cellNum - 1
+  const rowNum = Math.floor(cellIndex / numCols);
   const remainder = cellNum > numCols ? cellNum - rowNum * numCols : 0
+  const colNum = remainder > 0 ? remainder - 1 : cellIndex
 
-  const colNum = remainder > 0 ? remainder - 1 : cellNum % numCols
-
-
-  console.log('cell num:', cellNum);
-  console.log('rowNum:', rowNum)
-  console.log('colNum:', colNum)
   return [rowNum, colNum];
 };
