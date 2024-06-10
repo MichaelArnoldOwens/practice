@@ -2,6 +2,7 @@ import {
   BoardDimsType,
   CellIndex,
   CellType,
+  VisibleCellType,
   SettingType,
   VisibleBoardRowType,
   VisibleBoardType,
@@ -23,18 +24,25 @@ export const buildBoard = (boardDims: BoardDimsType) => {
   return result;
 };
 
-export const pickRandomMines = (difficulty: SettingType) => {
-  const result = new Set();
+export const pickRandomMines = (difficulty: SettingType): Set<string> => {
+  const result: Set<string> = new Set();
   const { boardDims, numMines } = difficulty;
   const [numRows, numCols] = boardDims;
   const totalCells = numRows * numCols;
   while (result.size < numMines) {
-    const candidate = Math.floor(totalCells * Math.random()) + 1;
+    const candidateCellNum = Math.floor(totalCells * Math.random()) + 1;
+    const candidate = String(
+      cellNumToRowColIndex(candidateCellNum, difficulty.boardDims),
+    );
     if (!result.has(candidate)) {
       result.add(candidate);
     }
   }
   return result;
+};
+
+export const mineSetValToBoardDim = (mineVal: string) => {
+  return mineVal.split(",").map(Number);
 };
 
 export const cellNumToRowColIndex = (
@@ -60,6 +68,15 @@ export const rowColIndexToCellNum = (
   return rowIndex * numCols + colIndex + 1;
 };
 
-export const copyVisibleBoard = (board: VisibleBoardType) => {
+// TODO: make the arg generic for any 2D array
+export const copyVisibleBoard = (board: VisibleBoardType): VisibleBoardType => {
   return board.map((row) => row.slice());
 };
+
+const cellTypeOrder: Record<string, VisibleCellType> = {
+  [VisibleCellType.Mark]: VisibleCellType.Unmarked,
+  [VisibleCellType.Unmarked]: VisibleCellType.Flag,
+  [VisibleCellType.Flag]: VisibleCellType.Mark,
+};
+
+export const getNextCellType = (cell: VisibleCellType) => cellTypeOrder[cell];
