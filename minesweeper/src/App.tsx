@@ -4,7 +4,7 @@ import { DIFFICULTY } from "./constants";
 export default function App() {
   return (
     <div>
-      <Minesweeper difficulty={DIFFICULTY.EASY} />
+      <Minesweeper difficulty={DIFFICULTY.TEST} />
     </div>
   );
 }

@@ -1,9 +1,15 @@
+import { useCallback } from "react";
 import { Cell } from "./Cell";
-import { useGameContext } from "./hooks/useGameContext";
-import { VisibleBoardRowType } from "./types";
+import { useGameContext, useUpdateVisibleBoard } from "./hooks/useGameContext";
+import { CellIndex, VisibleBoardRowType } from "./types";
 
 export const Board = () => {
   const { visibleBoard } = useGameContext();
+  const updateVisibleBoard = useUpdateVisibleBoard();
+  const handleClick = useCallback(
+    (index: CellIndex) => () => updateVisibleBoard(index),
+    [updateVisibleBoard],
+  );
 
   const Row = ({
     row,
@@ -16,7 +22,8 @@ export const Board = () => {
       <Cell
         key={`col-${rowIndex}-${colIndex}`}
         value={cellVal}
-        index={[rowIndex, colIndex]}
+        cellIndex={[rowIndex, colIndex]}
+        handleClick={handleClick([rowIndex, colIndex])}
       />
     ));
 
@@ -26,6 +33,7 @@ export const Board = () => {
         return (
           <div key={`row-${rowIndex}`} style={{ display: "flex" }}>
             <Row row={row} rowIndex={rowIndex} />
+            
           </div>
         );
       })}

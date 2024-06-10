@@ -1,13 +1,15 @@
 import { CSSProperties, memo, useCallback } from "react";
 import { CellIndex, VisibleCellType } from "./types";
-import { useGameContext } from "./hooks/useGameContext";
+import { useGetVisibleBoardValContext } from "./hooks/useGameContext";
+import { copyVisibleBoard } from "./utils/board_utils";
 
 interface CellProps {
   value: VisibleCellType;
-  index: CellIndex;
+  handleClick: () => void;
 }
 
 const styles: CSSProperties = {
+  cursor: "pointer",
   filter: `drop-shadow(
     1px 2px 4px hsl(220deg 60% 50%))`,
   width: 40,
@@ -23,13 +25,10 @@ const styles: CSSProperties = {
   flexWrap: "wrap",
 };
 
-const CellComponent = ({ value, index }: CellProps) => {
-  const { updateVisibleBoard } = useGameContext();
-  const handleClick = useCallback(
-    () => updateVisibleBoard(index),
-    [index, updateVisibleBoard],
-  );
-  console.log("rendering cell at:", String(index));
+const CellComponent = ({ handleClick, cellIndex }: CellProps) => {
+  // TODO: All Cell are re-rendering on click
+  const value = useGetVisibleBoardValContext(cellIndex);
+  console.log("rendering cell value:", value);
   return (
     <div onClick={handleClick} style={styles}>
       {value}
