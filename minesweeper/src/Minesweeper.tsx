@@ -16,6 +16,7 @@ export const Minesweeper = ({ difficulty }: BoardProps) => {
           justifyContent: "center",
           alignItems: "center",
           backgroundColor: "greenyellow",
+          height: "100vh",
         }}
       >
         <Board />

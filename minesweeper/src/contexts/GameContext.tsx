@@ -16,7 +16,7 @@ import {
 interface GameContextType {
   visibleBoard: VisibleBoardType;
   mineSet: MineSetType;
-  updateVisibleBoard: (cell: CellIndex, board: VisibleBoardType) => void;
+  updateVisibleBoard: (cell: CellIndex) => void;
 }
 
 export const GameContext = createContext<GameContextType>({
@@ -42,13 +42,15 @@ export const GameContextProvider = ({
 
   const updateVisibleBoard = useCallback(
     (cell: CellIndex) => {
-      const newBoard = copyVisibleBoard(visibleBoard);
-      const [row, col] = cell;
-      const currCellType = newBoard[row][col];
-      newBoard[row][col] = getNextCellType(currCellType);
-      setVisibleBoard(newBoard);
+      setVisibleBoard((prevBoard) => {
+        const newBoard = copyVisibleBoard(prevBoard);
+        const [row, col] = cell;
+        const currCellType = newBoard[row][col];
+        newBoard[row][col] = getNextCellType(currCellType);
+        return newBoard;
+      });
     },
-    [setVisibleBoard, visibleBoard],
+    [setVisibleBoard],
   );
 
   const gameContextState = useMemo(() => {

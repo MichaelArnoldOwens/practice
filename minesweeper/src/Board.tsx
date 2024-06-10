@@ -5,9 +5,19 @@ import { VisibleBoardRowType } from "./types";
 export const Board = () => {
   const { visibleBoard } = useGameContext();
 
-  const Row = ({ row }: { row: VisibleBoardRowType }) =>
+  const Row = ({
+    row,
+    rowIndex,
+  }: {
+    row: VisibleBoardRowType;
+    rowIndex: number;
+  }) =>
     row.map((cellVal, colIndex) => (
-      <Cell key={`col-${colIndex}`} value={cellVal} />
+      <Cell
+        key={`col-${rowIndex}-${colIndex}`}
+        value={cellVal}
+        index={[rowIndex, colIndex]}
+      />
     ));
 
   return (
@@ -15,7 +25,7 @@ export const Board = () => {
       {visibleBoard.map((row, rowIndex) => {
         return (
           <div key={`row-${rowIndex}`} style={{ display: "flex" }}>
-            <Row row={row} />
+            <Row row={row} rowIndex={rowIndex} />
           </div>
         );
       })}
