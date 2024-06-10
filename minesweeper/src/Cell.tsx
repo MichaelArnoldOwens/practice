@@ -1,11 +1,11 @@
 import { CSSProperties, memo, useCallback } from "react";
 import { CellIndex, VisibleCellType } from "./types";
 import { useGetVisibleBoardValContext } from "./hooks/useGameContext";
-import { copyVisibleBoard } from "./utils/board_utils";
 
 interface CellProps {
   value: VisibleCellType;
   handleClick: () => void;
+  cellIndex: CellIndex;
 }
 
 const styles: CSSProperties = {
