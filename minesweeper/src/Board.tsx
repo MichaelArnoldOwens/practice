@@ -1,12 +1,24 @@
-import { SettingType } from "@/types";
+import { Cell } from "./Cell";
+import { useGameContext } from "./hooks/useGameContext";
+import { VisibleBoardRowType } from "./types";
 
-import { GameContextProvider } from "./contexts/GameContext";
+export const Board = () => {
+  const { visibleBoard } = useGameContext();
 
-interface BoardProps {
-  difficulty: SettingType;
-}
+  const Row = ({ row }: { row: VisibleBoardRowType }) =>
+    row.map((cellVal, colIndex) => (
+      <Cell key={`col-${colIndex}`} value={cellVal} />
+    ));
 
-export const Board = ({ difficulty }: BoardProps) => {
-
-  return <GameContextProvider difficulty={difficulty}><div style={{ backgroundColor: 'greenyellow' }}>board</div></GameContextProvider>
+  return (
+    <div>
+      {visibleBoard.map((row, rowIndex) => {
+        return (
+          <div key={`row-${rowIndex}`} style={{ display: "flex" }}>
+            <Row row={row} />
+          </div>
+        );
+      })}
+    </div>
+  );
 };

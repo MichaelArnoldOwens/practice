@@ -1,10 +1,10 @@
-import { Board } from "./Board";
+import { Minesweeper } from "./Minesweeper";
 import { DIFFICULTY } from "./constants";
 
 export default function App() {
   return (
     <div>
-      <Board difficulty={DIFFICULTY.EASY} />
+      <Minesweeper difficulty={DIFFICULTY.EASY} />
     </div>
   );
 }
