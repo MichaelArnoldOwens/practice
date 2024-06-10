@@ -63,3 +63,11 @@ export const GameContextProvider = ({
     </GameContext.Provider>
   );
 };
+
+// type BoardContextType = VisibleBoardType;
+// export const BoardContext = createContext<BoardContextType>([]);
+// export const BoardContextProvider = () => {
+//   const [visibleBoard, setVisibleBoard] = useState<VisibleBoardType>(
+//     buildBoard(boardDims),
+//   );
+// };
