@@ -1,14 +1,12 @@
-import { useCallback } from "react";
 import { Cell } from "./Cell";
 import { useGameContext, useUpdateVisibleBoard } from "./hooks/useGameContext";
+import { ClickWrapper } from "./ClickWrapper";
 
 export const Board = () => {
   const { visibleBoard } = useGameContext();
   const updateVisibleBoard = useUpdateVisibleBoard();
-  const handleClick = useCallback(
-    (row: number, col: number) => updateVisibleBoard([row, col]),
-    [updateVisibleBoard],
-  );
+  const handleClick = (row: number, col: number) => () =>
+    updateVisibleBoard([row, col]);
 
   return (
     <div>
@@ -17,13 +15,12 @@ export const Board = () => {
           <div key={`row-${rowIndex}`} style={{ display: "flex" }}>
             {row.map((cellVal, colIndex) => {
               return (
-                <Cell
+                <ClickWrapper
                   key={`col-${rowIndex}-${colIndex}`}
-                  value={cellVal}
-                  rowIndex={rowIndex}
-                  colIndex={colIndex}
-                  handleClick={handleClick}
-                />
+                  handleClick={handleClick(rowIndex, colIndex)}
+                >
+                  <Cell value={cellVal} />
+                </ClickWrapper>
               );
             })}
           </div>

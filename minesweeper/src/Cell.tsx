@@ -1,12 +1,8 @@
-import { CSSProperties, memo, useMemo } from "react";
-import { Cell as CellType, VisibleCellType } from "./types";
-import { useGetVisibleBoardValContext } from "./hooks/useGameContext";
+import { CSSProperties, memo } from "react";
+import { VisibleCellType } from "./types";
 
 interface CellProps {
   value: VisibleCellType;
-  handleClick: (row: number, col: number) => void;
-  rowIndex: number;
-  colIndex: number;
 }
 
 const styles: CSSProperties = {
@@ -26,29 +22,8 @@ const styles: CSSProperties = {
   flexWrap: "wrap",
 };
 
-const CellComponent = ({ handleClick, rowIndex, colIndex }: CellProps) => {
-  // TODO: All Cell are re-rendering on click
-  const value: CellType = useGetVisibleBoardValContext([rowIndex, colIndex]);
-  const memoValue: CellType = useMemo(() => value, [value]);
-  console.log("rendering cell value:", value);
-  return (
-    <div onClick={() => handleClick(rowIndex, colIndex)} style={styles}>
-      {memoValue}
-    </div>
-  );
+const CellComponent = ({ value }: CellProps) => {
+  return <div style={styles}>{value}</div>;
 };
 
-export const Cell = memo(CellComponent, (prevProps, nextProps) => {
-  console.log(
-    `[${prevProps.rowIndex}, ${prevProps.colIndex}]`,
-    "are equal:",
-    prevProps.value === nextProps.value &&
-      prevProps.rowIndex === nextProps.rowIndex &&
-      prevProps.colIndex === nextProps.colIndex,
-  );
-  return (
-    prevProps.value === nextProps.value &&
-    prevProps.rowIndex === nextProps.rowIndex &&
-    prevProps.colIndex === nextProps.colIndex
-  );
-});
+export const Cell = memo(CellComponent);
